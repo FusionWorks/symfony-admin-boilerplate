@@ -1,0 +1,36 @@
+{% extends "admin/layout.html.twig" %}
+
+{% block body %}
+    <body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="{{ path('app_main_index') }}"><b>NEW</b>project</a>
+        </div>
+
+        <div class="login-box-body">
+            <p class="login-box-msg">Enter your email or username to reset password</p>
+
+            <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                <div class="form-group has-feedback">
+                    <input type="text" id="username" name="username" required="required"
+                           autocomplete="username" class="form-control" placeholder="Email or Username">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-7 forgot-password">
+                        <a href="{{ path('fos_user_security_login') }}">Back to login page</a>
+                    </div>
+                    <div class="col-xs-5">
+                        <input class="btn btn-primary btn-block btn-flat" type="submit" id="submit" name="submit"
+                               value="Reset password"/>
+                    </div>
+                </div>
+            </form>
+
+            <br>
+        </div>
+    </div>
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    </body>
+{% endblock %}

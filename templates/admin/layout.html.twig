@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}New Project Administration Panel{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables/css/dataTables.bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables/css/jquery.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables/css/responsive.bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/Ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/AdminLTE.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/skins/_all-skins.min.css') }}">
+    <link rel="stylesheet"
+          href="{{ asset('plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap-daterangepicker/daterangepicker.css') }}">
+
+    <link rel="shortcut icon" href="{{ asset('img/favicons/favicon.ico') }}">
+    <meta name="theme-color" content="#ffffff">
+    {% block css %}{% endblock %}
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+{% block body %}
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    {% include 'admin/elements/header.html.twig' %}
+
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu tree" data-widget="tree">
+                <li class="header">MAIN NAVIGATION</li>
+                <li><a href="#"><i class="fa fa-users"></i>
+                        <span>Users management</span></a></li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-envelope"></i>
+                        <span>Email templates management</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu" style="">
+                        <li><a href="#"><i class="fa fa-folder-open"></i>
+                                <span>Shared folder template</span></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-link"></i>
+                                <span>Shared link template</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa fa-level-down"></i>
+                        <span>Invite codes management</span></a>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-file-text-o"></i>
+                        <span>Static pages management</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu" style="">
+                        <li><a href="#"><i
+                                        class="fa fa-circle-o"></i> About </a></li>
+                        <li><a href="#"><i
+                                        class="fa fa-circle-o"></i> Contributors </a></li>
+                        <li><a href="#"><i
+                                        class="fa fa-circle-o"></i> Privacy policy </a></li>
+                        <li><a href="#"><i
+                                        class="fa fa-circle-o"></i> Terms of use </a></li>
+                        <li><a href="#"><i
+                                        class="fa fa-circle-o"></i> Blog </a></li>
+                        <li><a href="#"><i
+                                        class="fa fa-circle-o"></i> Press </a></li>
+                        <li><a href="#"><i
+                                        class="fa fa-circle-o"></i> Developers </a></li>
+                        <li><a href="#"><i
+                                        class="fa fa-circle-o"></i> Help </a></li>
+                        <li><a href="#"><i
+                                        class="fa fa-circle-o"></i> Feedback </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </aside>
+
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            {% block content_header %}
+                <h1>Dashboard</h1>
+
+                {% block breadcrumb %}
+                    <ol class="breadcrumb">
+
+                    <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+
+                {% endblock %}
+                </ol>
+            {% endblock %}
+        </section>
+
+        <section class="content">
+            {% block content %}{% endblock %}
+        </section>
+    </div>
+</div>
+
+<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('plugins/jquery-ui/jquery-ui.js') }}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('plugins/moment/min/moment.min.js') }}"></script>
+<script src="{{ asset('js/adminlte.js') }}"></script>
+
+<script src="{{ asset('plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables/js/dataTables.bootstrap.min.js') }}"></script>
+
+{% block js %}{% endblock %}
+
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,9 @@
+{% extends '@KnpMenu/menu.html.twig' %}
+
+{% block label %}
+    {% if item.getExtra('icon') %}
+        <i class="fa fa-{{ item.getExtra('icon') }}"></i>
+    {% endif %}
+
+    <span>{{ parent() }}</span>
+{% endblock %}

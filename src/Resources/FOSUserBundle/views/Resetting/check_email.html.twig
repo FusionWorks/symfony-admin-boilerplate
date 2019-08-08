@@ -1,0 +1,26 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% extends "admin/layout.html.twig" %}
+
+{% block body %}
+    <body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="{{ path('app_main_index') }}"><b>NEW</b>project</a>
+        </div>
+
+        <div class="login-box-body">
+            <p class="login-box-msg">{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}</p>
+            <div class="row">
+                <div class="col-xs-12">
+                    <a class="btn btn-primary btn-block btn-flat" href="{{ path('fos_user_security_login') }}">Back to
+                        login page</a>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    </body>
+{% endblock %}
