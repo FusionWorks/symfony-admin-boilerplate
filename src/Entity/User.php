@@ -24,6 +24,11 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Seller", cascade={"persist", "remove"}, mappedBy="user")
+     */
+    private $seller;
+
     public function __construct()
     {
         parent::__construct();

@@ -1,0 +1,44 @@
+{% extends 'admin/layout.html.twig' %}
+
+    {% block title %}Seller list{% endblock %}
+
+{% block content %}
+    <h1>Sellers list</h1>
+    <div class="box box-primary">
+        <div class="box-body table-responsive">
+
+            <table class="table table-bordered table-striped dataTable">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>User</th>
+                    <th>Company</th>
+                    <th>Contacts</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for seller in sellers %}
+                    <tr>
+                        <td>{{ seller.id }}</td>
+                        <td>{{ seller.user.username }}</td>
+                        <td>{{ seller.company }}</td>
+                        <td>{{ seller.contacts }}</td>
+                        <td>
+                            <a class="btn btn-default" href="{{ path('seller_show', {'id': seller.id}) }}">Show</a>
+                            <a class="btn bg-navy" href="{{ path('seller_edit', {'id': seller.id}) }}">Edit</a>
+                            {{ include('admin/seller/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a class="btn bg-navy" href="{{ path('seller_new') }}">Create new</a>
+        </div>
+    </div>
+
+{% endblock %}

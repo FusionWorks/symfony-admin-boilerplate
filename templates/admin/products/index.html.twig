@@ -1,0 +1,44 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Products index{% endblock %}
+
+{% block content %}
+    <h1>Products list</h1>
+
+<div class="box box-primary">
+    <div class="box-body table-responsive">
+    <table class="table table-bordered table-striped dataTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                    <a class="btn btn-default" href="{{ path('products_show', {'id': product.id}) }}">Show</a>
+                    <a class="btn bg-navy" href="{{ path('products_edit', {'id': product.id}) }}">Edit</a>
+                    {{ include('admin/products/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn bg-navy" href="{{ path('products_new') }}">Create new</a>
+    </div>
+</div>
+{% endblock %}

@@ -40,55 +40,12 @@
         <section class="sidebar">
             <ul class="sidebar-menu tree" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
-                <li><a href="#"><i class="fa fa-users"></i>
-                        <span>Menu item 1</span></a></li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-envelope"></i>
-                        <span>Menu item 2</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu" style="">
-                        <li><a href="#"><i class="fa fa-folder-open"></i>
-                                <span>Menu sub item 1</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-link"></i>
-                                <span>Menu sub item 2</span></a>
-                        </li>
-                    </ul>
+                <li><a href="{{ path('seller_index') }}"><i class="fa fa-users"></i>
+                        <span>Seller management</span></a></li>
+                <li><a href="{{ path('products_index') }}"><i class="fa fa-industry"></i>
+                        <span>Products management</span></a>
                 </li>
-                <li><a href="#"><i class="fa fa-level-down"></i>
-                        <span>Menu item 3</span></a>
-                </li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-file-text-o"></i>
-                        <span>Menu item 4</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu" style="">
-                        <li><a href="#"><i
-                                        class="fa fa-circle-o"></i> About </a></li>
-                        <li><a href="#"><i
-                                        class="fa fa-circle-o"></i> Contributors </a></li>
-                        <li><a href="#"><i
-                                        class="fa fa-circle-o"></i> Privacy policy </a></li>
-                        <li><a href="#"><i
-                                        class="fa fa-circle-o"></i> Terms of use </a></li>
-                        <li><a href="#"><i
-                                        class="fa fa-circle-o"></i> Blog </a></li>
-                        <li><a href="#"><i
-                                        class="fa fa-circle-o"></i> Press </a></li>
-                        <li><a href="#"><i
-                                        class="fa fa-circle-o"></i> Developers </a></li>
-                        <li><a href="#"><i
-                                        class="fa fa-circle-o"></i> Help </a></li>
-                        <li><a href="#"><i
-                                        class="fa fa-circle-o"></i> Feedback </a></li>
-                    </ul>
-                </li>
+
             </ul>
         </section>
     </aside>
@@ -97,8 +54,6 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             {% block content_header %}
-                <h1>Dashboard</h1>
-
                 {% block breadcrumb %}
                     <ol class="breadcrumb">
 
@@ -110,7 +65,8 @@
         </section>
 
         <section class="content">
-            {% block content %}{% endblock %}
+            {% block content %}
+            {% endblock %}
         </section>
     </div>
 </div>

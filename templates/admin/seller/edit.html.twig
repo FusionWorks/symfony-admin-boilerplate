@@ -1,0 +1,10 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Edit Seller{% endblock %}
+
+{% block content %}
+    <h1>Edit Seller</h1>
+
+    {{ include('admin/seller/_form.html.twig', {'button_label': 'Update'}) }}
+
+{% endblock %}

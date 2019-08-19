@@ -8,10 +8,7 @@
 
 namespace App\Controller;
 
-
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class MainController
@@ -22,11 +19,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/index")
+     * @Route("/")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index()
     {
-        return $this->render('main/index.html.twig');
+        return $this->render('admin/layout.html.twig');
     }
 }
