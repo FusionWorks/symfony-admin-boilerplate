@@ -4,7 +4,7 @@ This branch already set up with:
  - Symfony 4.2
  - FOSUserBundle
  - MySQL
- - AdminLTE
+ - AdminLTE (https://adminlte.io/)
 
 # Project setup and run
 
